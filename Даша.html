@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Опрос</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-100 to-purple-200 min-h-screen flex items-center justify-center p-6"
+  >
+    <div class="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-xl">
+      <h1 class="text-3xl font-bold text-center text-purple-700 mb-6">
+        Пройдите мой опрос
+      </h1>
+      <form id="surveyForm" class="space-y-6">
+        <div>
+          <label class="block text-lg font-medium text-gray-700 mb-2"
+            >1. Кто ты?</label
+          >
+          <select
+            class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-purple-400"
+            name="internetFrequency"
+            required
+          >
+            <option value="">Выберите вариант</option>
+            <option>Администратор</option>
+            <option>Просто Даша</option>
+            <option>Заебышь</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-lg font-medium text-gray-700 mb-2"
+            >2. Ты хочешь домой?</label
+          >
+          <input
+            class="w-full p-3 border rounded-xl focus:ring-2 focus:ring-purple-400"
+            required
+            min="да"
+            max="нет"
+          />
+        </div>
+        <div>
+          <label class="block text-lg font-medium text-gray-700 mb-2"
+            >3. Как сильно ты устала?</label
+          >
+          <div class="space-y-2">
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="internetUsage"
+                value="Соцсети"
+                required
+                class="mr-2"
+              />
+              Заебалась
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="internetUsage"
+                value="Работа"
+                class="mr-2"
+              />
+              Терпимо
+            </label>
+            <label class="flex items-center">
+              <input
+                type="radio"
+                name="internetUsage"
+                value="Развлечения"
+                class="mr-2"
+              />
+              Не устала
+            </label>
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition"
+          >
+            Отправить
+          </button>
+        </div>
+      </form>
+      <p
+        id="thankYouMsg"
+        class="mt-7 text-center text-black-600 font-semibold hidden"
+      >
+        За тобой приходить?
+        <a
+            href="second.html"
+            target="_blank"
+            class="bg-green-600 text-white px-6 py-3 rounded-xl transition"
+          >
+            Да</a>
+
+        <a
+          href="if no.html"
+          target="_blank"
+          class="bg-red-600 text-white px-6 py-3 rounded-xl transition"
+        >Нет
+        </a>   
+        </button>
+      </p>
+      <div></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("surveyForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("surveyForm").style.display = "none";
+          document.getElementById("thankYouMsg").style.display = "block";
+        });
+    </script>
+  </body>
+</html>
